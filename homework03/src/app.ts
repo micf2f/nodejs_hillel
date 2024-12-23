@@ -8,8 +8,8 @@ import httpLog from "./middleware/httpLog";
 
 const app = express();
 
-const PORT = process.env.APP_PORT ? process.env.APP_PORT : config.get("app_port");
-const HOSTNAME = process.env.APP_HOSTNAME ? process.env.APP_HOSTNAME : config.get("app_host");
+const PORT = config.get("app.port");
+const HOSTNAME = config.get("app.hostname");
 
 
 app.use(httpLog);
