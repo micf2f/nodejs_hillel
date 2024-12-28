@@ -1,0 +1,10 @@
+GET /
+GET /healthcheck
+GET /
+GET /
+GET /favicon.ico
+GET /healthcheck
+GET /
+GET /
+app: GET /
+app: GET /healthcheck
