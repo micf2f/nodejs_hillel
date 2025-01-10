@@ -1,9 +1,0 @@
-app: GET /
-app: GET /api/v1/users
-app: GET /api/v1/users/677ed318c6a7bae9f9ad8118
-app: GET /api/v1/users/677ed318c6a7bae9f9ad8118/posts
-app: GET /
-app: GET /api/v1/posts
-app: PUT /api/v1/posts/677edad6b0584d94781307bd
-app: PUT /api/v1/posts
-app: GET /api/v1/posts
