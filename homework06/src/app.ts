@@ -18,18 +18,28 @@ const PORT = config.get("app.port");
 const HOSTNAME = config.get("app.hostname");
 
 
-app.use(httpLog);
+const startServer = async () => {
+    try {
 
-app.use(express.json());
+        app.use(httpLog);
 
-connectDB();
+        await connectDB();
 
-app.use("/healthcheck", healthcheckRouter);
+        app.use(express.json());
 
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/posts", postRouter);
+        app.use("/healthcheck", healthcheckRouter);
+        app.use("/api/v1/users", userRouter);
+        app.use("/api/v1/posts", postRouter);
+
+        app.listen(PORT, HOSTNAME, () => {
+            console.log(`Server is running on http://${HOSTNAME}:${PORT}`);
+        });
+
+    } catch (error) {
+        console.error("Error during server initialization:", error);
+        process.exit(1); 
+    }
+};
 
 
-app.listen(PORT, HOSTNAME, () => {
-    console.log(`Server is running on http://${HOSTNAME}:${PORT}`);
-});
+startServer();

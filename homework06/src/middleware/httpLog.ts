@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 
-import getLogger from "../utils/logger.ts";
+import getLogger from "../utils/logger";
 
 
 const logger = getLogger('app');
